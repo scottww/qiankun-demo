@@ -1,8 +1,17 @@
 <template>
   <div id="app">
-    <h1>Main App</h1>
-    <router-link to="/user">Go to User App</router-link>
-    <router-view />  <!-- 显示 /user 路由组件 -->
-    <div id="subapp-viewport"></div>
+    <MainMenu />
+    <router-view />
+    <!-- 显示 /user 路由组件 -->
+    <!-- 子应用挂载点 -->
+    <div id="subapp-viewport" style="min-height: 400px"></div>
   </div>
 </template>
+<script>
+import MainMenu from "./components/MainMenu.vue";
+
+export default {
+  name: "App",
+  components: { MainMenu },
+};
+</script>

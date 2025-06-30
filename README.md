@@ -2,6 +2,8 @@
 
 这是一个基于 Vue 2 和 qiankun 实现的微前端示例项目，包含主应用（main-app）和子应用（user-app），支持主子应用独立启动和联合运行。
 
+NODE v18.20.4
+
 ## 目录结构
 
 qiankun-demo/  
