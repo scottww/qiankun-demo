@@ -4,9 +4,9 @@
 
 ## 目录结构
 
-qiankun-demo/
-├── main-app/ # 主应用
-└── user-app/ # 子应用
+qiankun-demo/  
+├── main-app/   # 主应用  
+└── user-app/   # 子应用  
 
 
 ## 环境要求
