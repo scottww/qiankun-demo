@@ -1,30 +1,30 @@
+<!-- components/MainMenu.vue -->
 <template>
-  <nav class="main-menu">
+  <div class="menu">
     <ul>
-      <li><router-link to="/">首页</router-link></li>
-      <li><router-link to="/user/">用户子应用</router-link></li>
+      <li v-for="menu in menus" :key="menu.name">
+        <template v-if="menu.children">
+          <div>{{ menu.name }}</div>
+          <ul>
+            <li v-for="child in menu.children" :key="child.path">
+              <router-link :to="child.path">{{ child.name }}</router-link>
+            </li>
+          </ul>
+        </template>
+        <template v-else>
+          <router-link :to="menu.path">{{ menu.name }}</router-link>
+        </template>
+      </li>
     </ul>
-  </nav>
+  </div>
 </template>
 
 <script>
-export default {
-  name: 'MainMenu'
-}
-</script>
+import { mainMenu } from '@/config/menu';
 
-<style scoped>
-.main-menu {
-  background: #333;
-  padding: 10px;
-}
-.main-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-.main-menu a {
-  color: #fff;
-  text-decoration: none;
-}
-</style>
+export default {
+  data() {
+    return { menus: mainMenu };
+  },
+};
+</script>
